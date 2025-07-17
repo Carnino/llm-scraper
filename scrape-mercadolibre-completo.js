@@ -8,7 +8,7 @@ dotenv.config()
 
 // Configuración del scraper
 const CONFIG = {
-  maxPaginas: 20,           // Número máximo de páginas a scrapear
+  maxPaginas: 3,           // Número máximo de páginas a scrapear
   delayEntrePaginas: 2000,  // Delay entre páginas (ms)
   timeoutPagina: 60000,     // Timeout para cargar página (ms)
   delayCarga: 5000,         // Delay adicional para cargar contenido (ms)
@@ -41,7 +41,7 @@ async function main() {
           precio: z.string().describe('Precio actual del producto'),
           precio_anterior: z.string().optional().describe('Precio anterior si hay descuento'),
           descuento: z.string().optional().describe('Porcentaje de descuento'),
-          ubicacion: z.string().optional().describe('Ubicación del vendedor'),
+          vendedor: z.string().optional().describe('Quien es el vendedor'),
           envio_gratis: z.boolean().optional().describe('Si tiene envío gratis'),
           calificacion: z.string().optional().describe('Calificación del vendedor'),
           vendidos: z.string().optional().describe('Cantidad vendida'),
